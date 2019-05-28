@@ -1,0 +1,42 @@
+<div class="main" fxLayout="column" fxLayoutAlign="center center">
+  <form [formGroup]="loginForm">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <mat-card class="formContainer">
+        <mat-card-title class="masterCardTitle" fxLayout="column" fxLayoutAlign="center center">
+          <h3> Fundo Notes </h3>
+        </mat-card-title>
+        <mat-card-subtitle class="masterCardSubtitle" fxLayout="column" fxLayoutAlign="center center">
+          <h4> Login </h4>
+        </mat-card-subtitle>
+        <mat-card-content class="" fxLayout="column" fxLayoutAlign="center center">
+          <div class="style">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Enter your email" formControlName="emailId" required>
+              <mat-error *ngIf="emailId.invalid">{{getErrorMessageEmail()}}</mat-error>
+              <mat-icon matSuffix>mail</mat-icon>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="style">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+                formControlName="password" required>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="" fxLayoutGap="80px">
+            <button mat-raised-button color="primary" id="register" routerLink="/register">Register</button>
+            <button mat-raised-button color="primary" id="login" (click)="onLogin()">Login</button>
+          </div>
+          <nav class="navDiv">
+            <a routerLink="/forgotpassword"> Forgot Password? </a>
+          </nav>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </form>
+</div>

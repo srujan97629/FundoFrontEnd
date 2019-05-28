@@ -1,0 +1,28 @@
+.main{
+    margin: 0%;
+    padding: 2.5%;
+}
+.formContainer
+{
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
+.style{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .style > * {
+    width: 100%;
+  }
+  .CardTitle
+  {
+      text-align: center;
+      color: rgb(49, 100, 177);
+  }
+  .CardSubtitle
+  {
+      color: black;
+  }

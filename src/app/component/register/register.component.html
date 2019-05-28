@@ -1,0 +1,83 @@
+<div class="main" fxLayout="column" fxLayoutAlign="center center" >
+  <form [formGroup]="registerForm" >
+    <div fxLayout="column" fxLayoutAlign="center center" >
+      <mat-card class="formContainer">
+        <mat-card-title class="" fxLayout="column" fxLayoutAlign="center center">
+          <h3> 
+             <span style="color: mediumblue">F</span>
+             <span style="color: rgb(118, 118, 131)">u</span>
+             <span style="color:rgb(185, 62, 62)">n</span>
+             <span style="color:gold">d</span>
+             <span style="color: blue">o</span> &nbsp;            
+             <span style="color:royalblue">N</span>
+             <span style="color: red">o</span>
+             <span style="color: rgb(15, 107, 46)">t</span>
+             <span style="color: blue">e</span>
+             <span style="color:yellowgreen">s</span>
+
+          </h3>
+        </mat-card-title>
+        <mat-card-subtitle class="CardSubtitle" fxLayout="column" fxLayoutAlign="center center">
+          <h4> Register </h4>
+        </mat-card-subtitle>
+        <mat-card-content class="" fxLayout="column" fxLayoutAlign="center center">
+          <div class="style">
+            <mat-form-field appearance="outline" >
+              <mat-label>FirstName</mat-label>
+              <input matInput placeholder="Enter your first name" formControlName="firstName" required>
+              <mat-error *ngIf="firstName.invalid">{{getErrorMessageFirstName()}}</mat-error>
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-hint>Enter firstName </mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="style">
+            <mat-form-field appearance="outline" >
+              <mat-label>LastName</mat-label>
+              <input matInput placeholder="Enter your last name" formControlName="lastName" required>
+              <mat-error *ngIf="lastName.invalid">{{getErrorMessageLastName()}}</mat-error>
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="style">
+            <mat-form-field appearance="outline" >
+              <mat-label>MobileNumber</mat-label>
+              <input matInput placeholder="Enter your MobileNumber" formControlName="mobileNumber" required>
+              <mat-error *ngIf="mobileNumber.invalid">{{getErrorMessageMobileNumber()}}</mat-error>
+              <mat-icon matSuffix>phone</mat-icon>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="style">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Enter your email" formControlName="emailId" required >
+              <mat-error *ngIf="emailId.invalid">{{getErrorMessageEmail()}}</mat-error>
+              <mat-icon matSuffix>mail</mat-icon>
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="style">
+            <mat-form-field appearance="outline" >
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>           
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div fxLayoutGap="80px" >
+            <button mat-raised-button color="primary" id="login" routerLink="/login">Login</button>
+            <button mat-raised-button color="primary" id="register" (click)="onRegister()">Register</button>
+          </div>
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </form>
+</div>
